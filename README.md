@@ -11,7 +11,7 @@ What excites me most about this field is collaborating closely with clinicians t
 - **Treatment effect heterogeneity** -- understanding who benefits most from treatment
 - **Prediction modeling** -- developing and validating clinical prediction models
 - **Causal inference** -- estimating treatment effects from observational data
-- **Cancer prognosis** -- applied work in oncology, nephrology, and cardiovascular disease
+- **Clinical topics** -- applied work in oncology, nephrology, and cardiovascular disease
 
 ## R Shiny Apps
 
