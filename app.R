@@ -220,7 +220,7 @@ ui <- tagList(
       .timeline { position: relative; padding-left: 28px; }
       .timeline::before {
         content: ''; position: absolute;
-        left: 12px; top: 14px; bottom: 14px;
+        left: 12px; top: 14px; bottom: 0;
         width: 2px;
         background: linear-gradient(to bottom, var(--primary-light), var(--primary-lighter));
         border-radius: 2px;
@@ -324,6 +324,31 @@ ui <- tagList(
         color: var(--primary-dark); margin-top: 8px;
       }
 
+      /* App cards */
+      .app-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+      .app-card {
+        display: block; text-decoration: none; color: inherit;
+        padding: 20px;
+        background: linear-gradient(135deg, #FDFBF7, white);
+        border-radius: 10px; border-top: 3px solid var(--primary-light);
+        transition: var(--transition); text-align: center;
+      }
+      .app-card:hover { box-shadow: var(--shadow-hover); transform: translateY(-2px); }
+      .app-card .app-icon {
+        font-size: 1.8rem; color: var(--primary-light); margin-bottom: 12px;
+      }
+      .app-card .app-name {
+        font-family: 'Playfair Display', serif;
+        font-size: 1rem; font-weight: 700;
+        color: var(--primary-dark); margin-bottom: 8px;
+      }
+      .app-card .app-desc {
+        font-size: 0.85rem; color: var(--text-light); line-height: 1.5;
+      }
+      @media (max-width: 900px) {
+        .app-grid { grid-template-columns: 1fr; }
+      }
+
       /* References */
       .ref-grid {
         display: grid;
@@ -397,7 +422,7 @@ ui <- tagList(
       div(class = "header-nav",
         tags$a(href = "mailto:carolienm@live.nl",
           tags$i(class = "fas fa-envelope"), "Email"),
-        tags$a(href = "tel:+31611819470",
+        tags$a(href = "#", onclick = "navigator.clipboard.writeText('+31 6 1181 9470'); this.textContent='Copied!'; setTimeout(() => { this.innerHTML='<i class=\"fas fa-phone\"></i> +31 6 1181 9470'; }, 1500); return false;",
           tags$i(class = "fas fa-phone"), "+31 6 1181 9470"),
         tags$a(href = "https://github.com/CHMMaas", target = "_blank",
           tags$i(class = "fab fa-github"), "GitHub"),
@@ -541,7 +566,38 @@ ui <- tagList(
               div(class = "edu-detail",
                 tags$i(class = "fas fa-circle"), "Aenorm Magazine Committee"),
               div(class = "gpa-badge",
-                tags$i(class = "fas fa-star"), "GPA: 8.0")
+                tags$i(class = "fas fa-star"), "GPA: 8.0  |  Thesis: 8.0")
+            )
+          )
+        ),
+
+        # R Shiny Apps
+        tags$section(
+          tags$h2(tags$i(class = "fas fa-laptop-code"), "R Shiny Apps"),
+          div(class = "app-grid",
+            tags$a(class = "app-card",
+              href = "https://erasmusmcpublichealth.shinyapps.io/MelanomaWebapp/",
+              target = "_blank",
+              div(class = "app-icon", tags$i(class = "fas fa-chart-line")),
+              div(class = "app-name", "Melanoma Webapp"),
+              div(class = "app-desc",
+                "Prediction of recurrence-free and melanoma-specific survival after sentinel lymph node biopsy")
+            ),
+            tags$a(class = "app-card",
+              href = "https://mdmerasmusmc.shinyapps.io/LOLECalculator/",
+              target = "_blank",
+              div(class = "app-icon", tags$i(class = "fas fa-calculator")),
+              div(class = "app-name", "LOLE Calculator"),
+              div(class = "app-desc",
+                "Loss of life expectancy calculator for patients with solid malignancies")
+            ),
+            tags$a(class = "app-card",
+              href = "https://chmapps.shinyapps.io/RID-AKI-90/",
+              target = "_blank",
+              div(class = "app-icon", tags$i(class = "fas fa-heartbeat")),
+              div(class = "app-name", "RID-AKI-90"),
+              div(class = "app-desc",
+                "Predicted probability of recovery in dialysis-dependent AKI at 90 days")
             )
           )
         ),
