@@ -1,0 +1,12 @@
+name: CurriculumVitae
+title: CurriculumVitae
+username: chmapps
+account: chmapps
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 17539624
+bundleId:
+url: https://chmapps.shinyapps.io/CurriculumVitae/
+version: 1
+asMultiple: FALSE
+asStatic: FALSE
