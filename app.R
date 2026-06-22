@@ -571,9 +571,9 @@ ui <- tagList(
           )
         ),
 
-        # R Shiny Apps
+        # R Shiny Apps & Packages
         tags$section(
-          tags$h2(tags$i(class = "fas fa-laptop-code"), "R Shiny Apps"),
+          tags$h2(tags$i(class = "fas fa-laptop-code"), "R Shiny Apps & Packages"),
           div(class = "app-grid",
             tags$a(class = "app-card",
               href = "https://erasmusmcpublichealth.shinyapps.io/MelanomaWebapp/",
@@ -598,6 +598,14 @@ ui <- tagList(
               div(class = "app-name", "RID-AKI-90"),
               div(class = "app-desc",
                 "Predicted probability of recovery in dialysis-dependent AKI at 90 days")
+            ),
+            tags$a(class = "app-card",
+              href = "https://github.com/CHMMaas/HTEPredictionMetrics",
+              target = "_blank",
+              div(class = "app-icon", tags$i(class = "fas fa-box-open")),
+              div(class = "app-name", "HTEPredictionMetrics"),
+              div(class = "app-desc",
+                "Metrics to evaluate heterogeneous treatment effect predictions")
             )
           )
         ),
