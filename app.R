@@ -606,6 +606,14 @@ ui <- tagList(
               div(class = "app-name", "HTEPredictionMetrics"),
               div(class = "app-desc",
                 "Metrics to evaluate heterogeneous treatment effect predictions")
+            ),
+            tags$a(class = "app-card",
+              href = "https://github.com/CHMMaas/PredictionTools",
+              target = "_blank",
+              div(class = "app-icon", tags$i(class = "fas fa-box-open")),
+              div(class = "app-name", "PredictionTools"),
+              div(class = "app-desc",
+                "Metrics to evaluate predictions in survival analysis using multiple imputed datasets")
             )
           )
         ),
